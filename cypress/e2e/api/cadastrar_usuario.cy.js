@@ -6,7 +6,7 @@ describe('Testando uso da API', () => {
           method: 'POST',
           url:  'https://serverest.dev/usuarios',
        body: {
-          nome: 'vaninho',
+          nome: 'user',
           email: Math.random().toString(36).substring(2,10) + '@gmail.com',
           password: '123',
           administrador: 'true'
@@ -24,8 +24,8 @@ describe('Testando uso da API', () => {
            method: 'POST',
            url:  'https://serverest.dev/usuarios',
              body: {
-              nome: 'vaninho',
-              email: 'vaninho1@gmail.com',
+              nome: 'user',
+              email: 'userexistente@qa.com.br',
               password: '123',
               administrador: 'true'
         },failOnStatusCode: false

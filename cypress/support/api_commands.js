@@ -50,7 +50,7 @@ Cypress.Commands.add('postProdutoExistente', (data) => {
 
 // Cadastrar Produto usuario
 Cypress.Commands.add('postProdutoUsuario', (data) => {
-  cy.getToken('vagnerosales@gmail.com', '123').then((token) => {
+  cy.getToken('user@qa.com.br', '123').then((token) => {
     return cy.request({
       method: 'POST',
       url: 'https://serverest.dev/produtos',
@@ -111,7 +111,7 @@ Cypress.Commands.add('deletarProdutoToken', (data) => {
 
 //deletar produto rota exclusiva
 Cypress.Commands.add('deletarProdutoUsuario', (data) => {
-  cy.getToken('vagnerosales@gmail.com', '123').then((token) => {
+  cy.getToken('user@qa.com.br', '123').then((token) => {
     return cy.request({
       method: 'POST',
       url: 'https://serverest.dev/produtos',
@@ -220,7 +220,7 @@ Cypress.Commands.add('editar', (data) => {
 
   //editar produto Usuario
   Cypress.Commands.add('editarProdutoUsuario', (data) => {
-    cy.getToken('vagnerosales@gmail.com', '123').then((token) => {
+    cy.getToken('user@qa.com.br', '123').then((token) => {
       return cy.request({
         method: 'POST',
         url: 'https://serverest.dev/produtos',

@@ -35,8 +35,8 @@ describe('Token ausente, inválido ou expirado', () => {
           method: 'POST',
           url:  'https://serverest.dev/carrinhos',
        body: {
-          nome: 'vaninho',
-          email: 'vaninho@gmail.com',
+          nome: 'user',
+          email: 'user@qa.com.br',
           password: '123',
           administrador: 'true'
        },failOnStatusCode: false
