@@ -2,7 +2,7 @@
 
 Cypress.Commands.add('login', () => {
   cy.visit('/')
-  cy.get('[data-testid="email"]').type('vagnerosales@gmail.com')
+  cy.get('[data-testid="email"]').type('user@qa.com.br')
   cy.get('[data-testid="senha"]').type('123')
   cy.get('[data-testid="entrar"]').click()
 
@@ -10,7 +10,7 @@ Cypress.Commands.add('login', () => {
 
 Cypress.Commands.add('loginVazio', () => {
   cy.visit('/')
-  cy.get('[data-testid="email"]').type('vagnerosales@gmail.com').clear()
+  cy.get('[data-testid="email"]').type('user@qa.com.br').clear()
   cy.get('[data-testid="senha"]').type('123').clear()
   cy.get('[data-testid="entrar"]').click()
 
