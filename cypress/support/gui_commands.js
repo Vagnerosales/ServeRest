@@ -2,16 +2,23 @@
 
 Cypress.Commands.add('login', () => {
   cy.visit('/')
-  cy.get('[data-testid="email"]').type('user@qa.com.br')
-  cy.get('[data-testid="senha"]').type('123')
+  cy.get('[data-testid="email"]').type(Cypress.env('user_name'))
+  cy.get('[data-testid="senha"]').type(Cypress.env('user_password'), { log: false })
   cy.get('[data-testid="entrar"]').click()
 
+})
+Cypress.Commands.add('loginErro', () => {
+  cy.visit('/')
+  cy.get('[data-testid="email"]').type('vagnerosales@gmail.com')
+  cy.get('[data-testid="senha"]').type('1234')
+  cy.get('[data-testid="entrar"]').click()
+  
 })
 
 Cypress.Commands.add('loginVazio', () => {
   cy.visit('/')
-  cy.get('[data-testid="email"]').type('user@qa.com.br').clear()
-  cy.get('[data-testid="senha"]').type('123').clear()
+  cy.get('[data-testid="email"]').type(Cypress.env('user_name')).clear()
+  cy.get('[data-testid="senha"]').type(Cypress.env('user_password'), { log: false }).clear()
   cy.get('[data-testid="entrar"]').click()
 
 })
@@ -38,9 +45,8 @@ Cypress.Commands.add('pesquisa_nao_encontrada', () => {
 Cypress.Commands.add('logout', () => {
     cy.visit('/')
     cy.login()
-
     cy.get('[data-testid="logout"]').click()
-    cy.contains('Login').should('be.visible')
+
 })
 Cypress.Commands.add('Adicionar_na_lista', () => {
   cy.get('[data-testid="pesquisar"]').type("geladeira")

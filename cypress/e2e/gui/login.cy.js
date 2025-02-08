@@ -1,18 +1,16 @@
-
+import '../../../support/gui_commands'
 
 describe('Testes da AMBEV', function() {
-  beforeEach(function(){
-    cy.login()
-    
-  })
+ 
   it('Login Sucesso', function() {
     cy.login()
     cy.contains('Produtos').should('be.visible')
   }) 
 
   it('Login Erro', function() {
-    cy.login('vagnerosales@gmail.com', '1234')
-    cy.contains('Produtos').should('be.visible')
+    cy.loginErro()
+    cy.get('.alert > :nth-child(2)').should('be.visible')
+    
   }) 
 
   it('Login Vazio', function() {
