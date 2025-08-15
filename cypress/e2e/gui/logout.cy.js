@@ -1,4 +1,4 @@
-import '../../../support/gui_commands'
+import '../../support/gui_commands'
 
 describe('Logout', () => {
   beforeEach(() => {

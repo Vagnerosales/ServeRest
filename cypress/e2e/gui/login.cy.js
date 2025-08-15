@@ -1,6 +1,6 @@
-import '../../../support/gui_commands'
+import '../../support/gui_commands'
 
-describe('Testes da AMBEV', function() {
+describe('Testes da A', function() {
  
   it('Login Sucesso', function() {
     cy.login()
